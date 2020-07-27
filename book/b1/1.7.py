@@ -56,8 +56,23 @@ def convert_to_decimal_lager_bases(number, base):
         result += strings.index(numberString[i]) * pow(base, size-i-1)
     return result
 
+# - 재귀합수 사용 (실패 ... 인터넷 찾아봐야겠다 ...)
+def convert_to_decimal_lager_bases_rec(number, base):
+    strings = "0123456789ABCDEFGHIJ"
+    exponent = 0
+    result = 0
+
+    numberStringArray = str(number)
+    numberString = numberStringArray[len(numberStringArray) - 1:]
+    number = strings.index(numberString)
+
+    value = number
+    location = pow(base, exponent)
+
+    result = result * base + strings.index(numberString)
+
+    print(result)
 
 
-
-
+convert_to_decimal_lager_bases_rec(10004, 2)
 
